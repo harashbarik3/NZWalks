@@ -85,3 +85,6 @@ D:\Practices\WebApiPractice\NZWalks\NZWalks\NZWalks.API\obj\Debug\net6.0\refint\
 D:\Practices\WebApiPractice\NZWalks\NZWalks\NZWalks.API\obj\Debug\net6.0\NZWalks.API.pdb
 D:\Practices\WebApiPractice\NZWalks\NZWalks\NZWalks.API\obj\Debug\net6.0\NZWalks.API.genruntimeconfig.cache
 D:\Practices\WebApiPractice\NZWalks\NZWalks\NZWalks.API\obj\Debug\net6.0\ref\NZWalks.API.dll
+D:\Practices\WebApiPractice\NZWalks\NZWalks\NZWalks.API\bin\Debug\net6.0\AutoMapper.dll
+D:\Practices\WebApiPractice\NZWalks\NZWalks\NZWalks.API\bin\Debug\net6.0\AutoMapper.Collection.dll
+D:\Practices\WebApiPractice\NZWalks\NZWalks\NZWalks.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
