@@ -17,6 +17,7 @@ builder.Services.AddDbContext<NZWalksDbContext>(options =>
 });
 
 builder.Services.AddScoped<IResionRepository, ResionRepository>();
+builder.Services.AddScoped<IWalksRepository, WalksRepository>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 

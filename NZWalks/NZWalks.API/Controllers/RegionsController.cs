@@ -26,7 +26,7 @@ namespace NZWalks.API.Controllers
         {
             var regions = await _resionRepository.GetAllAsync();
 
-
+            
             //return DTO regions
             /*
             var regionsDTO = new List<Models.DTO.Region>();
