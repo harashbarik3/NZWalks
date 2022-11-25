@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using NZWalks.API.Data;
@@ -10,6 +11,7 @@ namespace NZWalks.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    
     public class RegionsController : Controller
     {
         private readonly IResionRepository _resionRepository;
@@ -22,6 +24,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles ="reader")]
         public async Task<IActionResult> GetAllRegions()
         {
             var regions = await _resionRepository.GetAllAsync();
@@ -58,6 +61,7 @@ namespace NZWalks.API.Controllers
         [HttpGet]
         [Route("{id:guid}")]
         [ActionName("GetRegionByIdAsync")]
+        [Authorize(Roles = "reader")]
         public async Task<IActionResult> GetRegionByIdAsync([FromRoute]Guid id)
         {
             var region=await _resionRepository.GetAsyncById(id);
@@ -73,6 +77,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "writer")]
         public async Task<IActionResult> AddRegionAsync([FromBody]AddRegionRequest addRegionRequest)
         {
             //Validate The Request
@@ -120,6 +125,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "writer")]
         public async Task<IActionResult> DeleteAsync([FromRoute]Guid id)
         {
             //Get region from database
@@ -143,6 +149,7 @@ namespace NZWalks.API.Controllers
 
         [HttpPut]
         [Route("{id:guid}")]
+        [Authorize(Roles = "writer")]
         public async Task<IActionResult> UpdateRegionAsync([FromRoute]Guid id,[FromBody]UpdateRegionRequest updateRegionRequest)
         {
             //Validate the incoming request
